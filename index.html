@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang đăng nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F8FF;
+        }
+
+        .login-form {
+            display: block;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor:pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 20px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h1>Đăng nhập</h1>
+        <form id="login-form">
+            <label for="username">Mã Số:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Mật Khẩu:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Đăng nhập">
+        </form> 
+    </div>
+    
+    <script>
+        let attempt = 0;
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (username === "22062002" && password === "22062002khoa") {
+                window.location.href = "https://meet.google.com/wwr-nngo-jny";
+            } else {
+                attempt++;
+                if (attempt >= 3) {
+                    document.querySelector(".login-form").style.display = "none";
+                    document.querySelector(".error").style.display = "block";
+                } else {
+                    alert("Sai Mật Khẩu");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
