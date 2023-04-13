@@ -56,6 +56,21 @@
             font-size: 20px;
             text-align:center;
         }
+input[type="button"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
     </style>
 </head>
 <body>
@@ -67,6 +82,7 @@
             <label for="password">Mật Khẩu:</label><br>
             <input type="password" id="password" name="password"><br><br>
             <input type="submit" value="Đăng nhập">
+	    <input type="button" value="Đăng Ký" onclick="window.location.href='https://forms.gle/5Lapg3qznmev23BH6'">
         </form> 
     </div>
     
